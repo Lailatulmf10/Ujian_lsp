@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
-import 'package:login_signup_flutter/screen/home.dart';
 import 'package:login_signup_flutter/screen/signupForm.dart';
-import 'package:login_signup_flutter/screen/detailForm.dart';
 
 class loginForm extends StatefulWidget {
   @override
@@ -32,7 +30,8 @@ class _loginFormState extends State<loginForm> {
                       color: Colors.black,
                       fontSize: 30.0),
                 ),
-                Image.asset("assets/images/logo.png", height: 200.0, width: 200.0),
+                Image.asset("assets/images/logo.png",
+                    height: 200.0, width: 200.0),
                 SizedBox(
                   height: 15.0,
                 ),
@@ -92,7 +91,7 @@ class _loginFormState extends State<loginForm> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      backgroundColor: Colors.blue,
                     ),
                     child: Text(
                       'Login',

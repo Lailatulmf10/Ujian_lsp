@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
-import 'package:login_signup_flutter/screen/home.dart';
 import 'package:login_signup_flutter/screen/loginForm.dart';
 
 class Pengaturan extends StatefulWidget {
@@ -49,7 +48,7 @@ class _PengaturanState extends State<Pengaturan> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
+                  backgroundColor: Colors.green,
                 ),
                 onPressed: () async {
                   if (oldpasswordController.text.isEmpty ||
@@ -87,7 +86,7 @@ class _PengaturanState extends State<Pengaturan> {
               SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  backgroundColor: Colors.blue,
                 ),
                 onPressed: () {
                   print("Simpan diklik");
@@ -98,7 +97,40 @@ class _PengaturanState extends State<Pengaturan> {
                 },
                 child: Text(
                   "Kembali",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Color.fromARGB(255, 253, 253, 253)),
+                ),
+              ),
+              SizedBox(height: 250),
+              Container(
+                padding: EdgeInsets.all(20),
+                color: Colors.grey,
+                child: Row(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 40.0,
+                    ),
+                    SizedBox(
+                      width: 20.0,
+                    ),
+                    Expanded(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'About This Application',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text('Aplikasi ini dibuat oleh :'),
+                        Text('Nama : Lailatul Mufida'),
+                        Text('NIM : 2141764094'),
+                        Text('Tanggal : 29 September 2023'),
+                      ],
+                    )),
+                  ],
                 ),
               ),
             ],

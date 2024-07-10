@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
 import 'package:login_signup_flutter/screen/detailForm.dart';
-import 'package:login_signup_flutter/screen/loginForm.dart';
 import 'package:login_signup_flutter/screen/pemasukan.dart';
 import 'package:login_signup_flutter/screen/pengaturan.dart';
 import 'package:login_signup_flutter/screen/pengeluaran.dart';
@@ -49,10 +48,9 @@ class _HomeState extends State<Home> {
                       ),
                       textAlign: TextAlign.center,
                     );
-                  }else{
+                  } else {
                     return const Text('Empty Data');
                   }
-                  ;
                 }),
             SizedBox(height: 10),
             FutureBuilder(
@@ -70,10 +68,9 @@ class _HomeState extends State<Home> {
                       ),
                       textAlign: TextAlign.center,
                     );
-                  }else{
+                  } else {
                     return const Text('Empty Data');
                   }
-                  ;
                 }),
             SizedBox(height: 20),
             Image.asset("assets/images/logo2.png", height: 200.0, width: 200.0),

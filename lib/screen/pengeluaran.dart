@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
-import 'package:login_signup_flutter/screen/detailForm.dart';
-import 'package:login_signup_flutter/screen/home.dart';
 
 class Pengeluaran extends StatefulWidget {
   final int id_user;
@@ -30,14 +28,13 @@ class _PengeluaranState extends State<Pengeluaran> {
             children: [
               SizedBox(height: 20),
               Text("Tanggal:"),
-              
               ElevatedButton(
                 onPressed: () => _selectDate(context),
                 child: Text("${selectedDate.toLocal()}".split(' ')[0]),
               ),
               SizedBox(height: 20),
               Text("Nominal:"),
-                TextFormField(
+              TextFormField(
                 controller: nominalController,
                 keyboardType: TextInputType.number,
               ),
@@ -49,7 +46,7 @@ class _PengeluaranState extends State<Pengeluaran> {
               SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange,
+                  backgroundColor: Colors.orange,
                 ),
                 onPressed: () {
                   tanggalController.clear();
@@ -64,7 +61,7 @@ class _PengeluaranState extends State<Pengeluaran> {
               SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
+                  backgroundColor: Colors.green,
                 ),
                 onPressed: () async {
                   if (tanggalController.text.isEmpty ||
@@ -104,7 +101,7 @@ class _PengeluaranState extends State<Pengeluaran> {
               SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  backgroundColor: Colors.blue,
                 ),
                 onPressed: () {
                   // print("Kembali diklik");
@@ -126,19 +123,18 @@ class _PengeluaranState extends State<Pengeluaran> {
   }
 
   Future<void> _selectDate(BuildContext context) async {
-  final DateTime? picked = await showDatePicker(
-    context: context,
-    initialDate: selectedDate,
-    firstDate: DateTime(2000),
-    lastDate: DateTime(2101),
-  );
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
 
-  if (picked != null && picked != selectedDate)
-    setState(() {
-      selectedDate = picked;
-      // Update the tanggalController with the selected date
-      tanggalController.text = "${selectedDate.toLocal()}".split(' ')[0];
-    });
-}
-
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        // Update the tanggalController with the selected date
+        tanggalController.text = "${selectedDate.toLocal()}".split(' ')[0];
+      });
+  }
 }

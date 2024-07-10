@@ -119,7 +119,7 @@ class _SignupFormState extends State<SignupFrom> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      backgroundColor: Colors.blue,
                     ),
                     child: Text(
                       'Signup',
@@ -146,8 +146,11 @@ class _SignupFormState extends State<SignupFrom> {
                           },
                         );
                       } else {
-                        DatabaseHelper().register(usernameController.text,namaController.text,
-                            passwordController.text, context);
+                        DatabaseHelper().register(
+                            usernameController.text,
+                            namaController.text,
+                            passwordController.text,
+                            context);
                       }
                     },
                   ),

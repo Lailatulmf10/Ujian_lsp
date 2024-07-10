@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
-import 'package:login_signup_flutter/screen/detailForm.dart';
-import 'package:login_signup_flutter/screen/home.dart';
 
 class Pemasukan extends StatefulWidget {
   final int id_user;
@@ -47,7 +45,7 @@ class _PemasukanState extends State<Pemasukan> {
               SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange,
+                  backgroundColor: Colors.orange,
                 ),
                 onPressed: () {
                   tanggalController.clear();
@@ -62,7 +60,7 @@ class _PemasukanState extends State<Pemasukan> {
               SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
+                  backgroundColor: Colors.green,
                 ),
                 onPressed: () async {
                   if (tanggalController.text.isEmpty ||
@@ -102,7 +100,7 @@ class _PemasukanState extends State<Pemasukan> {
               SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  backgroundColor: Colors.blue,
                 ),
                 onPressed: () async {},
                 child: Text(
@@ -118,18 +116,18 @@ class _PemasukanState extends State<Pemasukan> {
   }
 
   Future<void> _selectDate(BuildContext context) async {
-  final DateTime? picked = await showDatePicker(
-    context: context,
-    initialDate: selectedDate,
-    firstDate: DateTime(2000),
-    lastDate: DateTime(2101),
-  );
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
 
-  if (picked != null && picked != selectedDate)
-    setState(() {
-      selectedDate = picked;
-      // Update the tanggalController with the selected date
-      tanggalController.text = "${selectedDate.toLocal()}".split(' ')[0];
-    });
-}
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        // Update the tanggalController with the selected date
+        tanggalController.text = "${selectedDate.toLocal()}".split(' ')[0];
+      });
+  }
 }

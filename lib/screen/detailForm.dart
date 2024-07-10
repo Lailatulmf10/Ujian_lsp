@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_flutter/database/database_helper.dart';
 import 'package:login_signup_flutter/database/keuanganModel.dart';
-import 'package:login_signup_flutter/screen/home.dart';
-import 'package:login_signup_flutter/screen/pemasukan.dart';
-import 'package:login_signup_flutter/screen/pengeluaran.dart';
 
 class DetailForm extends StatefulWidget {
   final int id_user;
@@ -76,7 +73,7 @@ class _DetailFormState extends State<DetailForm> {
           height: 100,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
+                backgroundColor: Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
